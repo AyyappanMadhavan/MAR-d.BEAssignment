@@ -1,0 +1,30 @@
+<apex:page standardController="converter_c">
+    <apex:inputField id="temp_f" value="{!farenvalue}"/>
+    <apex:commandButton value="Convert To Celcius" action="{!convert}" rerender="out" />
+    
+    <apex:outputPanel id="out">
+        <apex:outputText value="{!celciusvalue}" />
+    </apex:outputPanel>
+    
+</apex:page>
+
+/*** Controller: ***/
+public class converter_c{
+	public string celciusvalue {get; set;}
+	public string farenvalue {get; set;}
+	
+	public void convert(){
+		int c_value = 0;
+		int f_value = Integer.parseInt(farenvalue);
+		c_value = (f_value - 32) * (5/9);
+		celciusvalue = string.valueOf(c_value);
+	}
+}
+
+
+//User Login Details
+ayyappan.vsm@gmail.com
+pwd: testtest11
+
+//Note: With lack of time I could not complete the whole assignment. 
+//I will continue with this assignment problem in coming days as well.
